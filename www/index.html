@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/brands.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>RentalZ-APP</title>
+</head>
+
+<body>
+    <!-- PAGE "HOME" -->
+    <!-- được quyền đổi id nhưng phải trùng với bên javascript -->
+    <div data-role="page" id="page-home-property" data-url="page-home-property" tabindex="0"
+        class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-footer-fixed ui-page-active"
+        style="padding-top: 52px; padding-bottom: 53px;">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" role="banner"
+            class="ui-header ui-bar-inherit ui-header-fixed slidedown">
+            <h1 style="font-size: 1.5em;">Home</h1>
+        </div>
+
+        <div data-role="main">
+            <img style="width: 100%;" src="img/binh-an-village-dalat.jpg" alt="">
+            <div class="subheader">
+                <div>
+                    <p>Now delivering real estate rental + more</p>
+                    <p>Find out now <i class="fa fa-chevron-right"></i></p>
+                </div>
+                <img src="img/search1.png" alt="" />
+
+            </div>
+
+            <div class="grid container">
+                <div class="item">
+                    <h4>Sea view hotel</h4>
+                    <p class="desc">Special price after the epidemic season</p>
+                    <img src="img/hotel_home.png" alt="" />
+                </div>
+                <div class="item">
+                    <h4>Deals & Rewards</h4>
+                    <p class="desc">Get 25% off when you refer a friend</p>
+                    <img src="img/deal.png" alt="" />
+                </div>
+                <div class="item">
+                    <h4>Shipping services</h4>
+                    <p class="desc">Receive preferential shipping when renting a room</p>
+                    <img src="img/shipping.png" alt="" />
+                </div>
+                <div class="item">
+                    <h4>Flight deals</h4>
+                    <p class="desc">Become a loyal customer to receive flight deals</p>
+                    <img src="img/flight.png" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus=""
+            role="contentinfo" class="ui-footer ui-bar-inherit ui-footer-fixed slideup">
+            <div data-role="navbar" class="ui-navbar" role="navigation">
+                <ul class="ui-grid-c">
+                    <li class="ui-block-a">
+                        <a href="#page-home-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext ui-nodisc-icon ui-state-persist active ui-btn-active">Home</a>
+                    </li>
+
+                    <li class="ui-block-b">
+                        <a href="#page-create-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-plus ui-btn-icon-notext ui-nodisc-icon">New</a>
+                    </li>
+
+                    <li class="ui-block-c">
+                        <a href="#page-list-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-grid ui-btn-icon-notext ui-nodisc-icon">List</a>
+                    </li>
+
+                    <li class="ui-block-d">
+                        <a href="#page-about-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-info ui-btn-icon-notext ui-nodisc-icon">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE "CREATE NEW POST" -->
+    <div data-role="page" id="page-create-property" data-url="page-create-property">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <h1 style="font-size: 1.5em;">Create Property</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <!-- Registration Form -->
+            <form id="frm-register-property">
+                <span id="error" style="color: red;"></span>
+                <fieldset class="ui-grid-a" style="overflow: visible;">
+                    <div class="ui-block-a" style="padding-right: 5px;">
+                        <label class="small-text">Property Name<span style="color: red;"> *</span></label>
+                        <input type="text" id="name_property" data-clear-btn="true"
+                            placeholder="Enter property name here..." required="">
+                    </div>
+
+                    <div class="ui-block-b" style="padding-left: 5px;">
+                        <label class="small-text">Property Address <span style="color: red;"> *</span></label>
+                        <input type="text" placeholder="Enter street number &amp; name here..." id="street_property"
+                            data-clear-btn="true" required="">
+                    </div>
+                </fieldset>
+
+
+                <fieldset data-role="controlgroup">
+                    <div>
+                        <label class="small-text">City<span style="color: red;"> *</span></label>
+                        <select id="city_property" required=""></select>
+                    </div>
+                    <div>
+                        <label class="small-text">District<span style="color: red;"> *</span></label>
+                        <select id="district_property" required=""></select>
+                    </div>
+                    <div>
+                        <label class="small-text">Ward<span style="color: red;"> *</span></label>
+                        <select id="ward_property" required=""></select>
+                    </div>
+                </fieldset>
+
+                <fieldset class="ui-grid-a" style="overflow: visible;">
+                    <div class="ui-block-a" style="padding-right: 5px;">
+                        <label class="small-text">Property Type<span style="color: red;"> *</span></label>
+                        <select id="type_property" required=""></select>
+                    </div>
+                    <div class="ui-block-b" style="padding-left: 5px;">
+                        <label class="small-text">Property Furniture</label>
+                        <select id="furniture_property"></select>
+                    </div>
+                </fieldset>
+
+
+                <fieldset class="ui-grid-a" style="overflow: visible;">
+                    <div class="ui-block-a" style="padding-right: 5px;">
+                        <label class="small-text">Number of Bedrooms <span style="color: red;"> *</span></label>
+                        <input type="number" id="bedroom_property" data-clear-btn="true"
+                            placeholder="Enter bedrooms no. here..." required="" min="0">
+                    </div>
+
+                    <div class="ui-block-b" style="padding-left: 5px;">
+                        <label class="small-text">Monthly Price <span style="color: red;"> *</span></label>
+                        <input type="number" id="price_property" data-clear-btn="true"
+                            placeholder="Enter monthly price here..." required="" min="0">
+                    </div>
+                </fieldset>
+
+                <fieldset class="ui-grid-a" style="overflow: visible;">
+                    <div class="ui-block-a" style="padding-right: 5px;">
+                        <label class="small-text">Reporter <span style="color: red;"> *</span></label>
+                        <input type="text" id="reporter_property" data-clear-btn="true"
+                            placeholder="Enter name of reporter here..." required="">
+                    </div>
+                    <div class="ui-block-b" style="padding-left: 5px;">
+                        <label class="small-text">Property Note</label>
+                        <input type="text" id="note_property" data-clear-btn="true" placeholder="Enter a note here...">
+                    </div>
+                </fieldset>
+                <label class="small-text">Property Image</label>
+                <a class="ui-btn ui-icon-camera ui-btn-icon-left blue"  id="btntakepicture">Add Image</a>
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="" width="50%" id="image">
+
+
+                <button type="submit" class="blue ui-btn ui-icon-plus ui-btn-icon-left">Post Property</button>
+            </form>
+
+            <!-- Confirm Registration -->
+            <form data-role="popup" id="frm-confirm-property" class="ui-content" data-overlay-theme="b">
+                <table style="text-align: left;">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td id="name_property"></td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td><img id="image" width="100"/></td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>
+                                <span id="street_property"></span>, <span id="ward_property"></span>, <span
+                                    id="district_property"></span>, <span id="city_property"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Type</th>
+                            <td id="type_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th>Bedroom No.</th>
+                            <td id="bedroom_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th>Price</th>
+                            <td id="price_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th>Furniture</th>
+                            <td id="furniture_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th>Reporter</th>
+                            <td id="reporter_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th>Note</th>
+                            <td id="note_property"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" style="padding: 5px;">
+                        <button type="button" id="edit-property">Edit</button>
+                    </div>
+
+                    <div class="ui-block-b" style="padding: 5px;">
+                        <button type="submit" class="blue">Confirm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page-home-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext ui-nodisc-icon">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-create-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-plus ui-btn-icon-notext ui-nodisc-icon ui-state-persist active">New</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-list-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-grid ui-btn-icon-notext ui-nodisc-icon">List</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-about-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-info ui-btn-icon-notext ui-nodisc-icon">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE "Post LIST" -->
+    <div data-role="page" id="page-list-property" data-url="page-list-property">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <h1 style="font-size: 1.5em;">List</h1>
+        </div>
+
+        <div data-role="main">
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="width: 100%; padding: 0px;">
+                            <input type="text" placeholder="Filter properties..." id="txt-filter-property">
+                        </td>
+
+                        <td style="padding: 0px;">
+                            <button id="btn-filter-popup"></button>
+                        </td>
+
+                        <td style="padding: 0px;">
+                            <button class="ui-btn ui-icon-refresh ui-btn-icon-notext ui-nodisc-icon"
+                                id="btn-reset"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <form data-role="popup" id="frm-search-property" class="ui-content" style="width: 80vw;"
+                data-overlay-theme="b">
+                <input type="text" id="name_property" placeholder="Property Name" data-clear-btn="true">
+                <input type="number" id="bedroom_property" data-clear-btn="true" placeholder="Number of Bedrooms">
+                <input type="text" id="street_property" placeholder="Street No. &amp; Name" data-clear-btn="true">
+
+                <fieldset data-role="controlgroup">
+                    <select id="city_property"></select>
+                    <select id="district_property"></select>
+                    <select id="ward_property"></select>
+                </fieldset>
+
+                <fieldset data-role="controlgroup">
+                    <select id="type_property"></select>
+                    <select id="furniture_property"></select>
+                </fieldset>
+
+                <button type="submit" class="blue ui-btn ui-icon-search ui-btn-icon-left">Search</button>
+            </form>
+            <ul id="list-property" data-role="listview" class="ui-nodisc-icon ui-alt-icon"></ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page-home-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext ui-nodisc-icon">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-create-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-plus ui-btn-icon-notext ui-nodisc-icon">New</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-list-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-grid ui-btn-icon-notext ui-nodisc-icon ui-state-persist active">List</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-about-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-info ui-btn-icon-notext ui-nodisc-icon">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE " DETAILS" -->
+    <div data-role="page" id="page-detail" data-url="page-detail">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div style="margin-left: 5px; margin-right: 5px;">
+                <a href="#page-list-property" data-transition="none"
+                    class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-nodisc-icon transparent">Back to list</a>
+
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+
+            <form data-role="popup" id="frm-delete-property" data-overlay-theme="b">
+                <div data-role="header">
+                    <h1 style="padding-top: 20px;">Delete Property?</h1>
+                </div>
+
+                <div role="main" class="ui-content">
+                    <h3>Do you really want to remove this property?</h3>
+                    <p>It will be permanently deleted.</p>
+                    <br>
+
+                    <p><em>Please type "<strong>confirm delete</strong>" to delete this property.</em></p>
+                    <input type="text" id="txt-confirm">
+
+                    <div style="text-align: right;">
+                        <a class="ui-btn ui-corner-all ui-btn-inline" data-rel="back">Cancel</a>
+
+                        <button type="submit" class="ui-btn ui-corner-all ui-btn-inline ui-disabled blue"
+                            id="btn-delete">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <form id="frm-update-property" data-role="popup" class="ui-content" data-overlay-theme="b">
+                <span id="error" style="color: red;"></span>
+
+                <label class="small-text">Property Name</label>
+                <input type="text" id="name_property" data-clear-btn="true" required="">
+
+                <label class="small-text">Property Address</label>
+                <input type="text" placeholder="Street Number &amp; Name" id="street_property" data-clear-btn="true"
+                    required="">
+                <a class="blue ui-btn ui-icon-camera ui-btn-icon-left" id="btntakepictureedit">Add Image</a>
+                <img style="display: block; margin-left: auto; margin-right: auto;" id="image" width="50%">
+                <fieldset data-role="controlgroup">
+                    <select id="city_property" required=""></select>
+                    <select id="district_property" required=""></select>
+                    <select id="ward_property" required=""></select>
+                </fieldset>
+
+                <label class="small-text">Property Type</label>
+                <select id="type_property" required=""></select>
+
+                <label class="small-text">Property Furniture</label>
+                <select id="furniture_property"></select>
+
+                <fieldset class="ui-grid-a" style="overflow: visible;">
+                    <div class="ui-block-a" style="padding-right: 5px;">
+                        <label class="small-text">Bedroom No.</label>
+                        <input type="number" id="bedroom_property" data-clear-btn="true" required="" value="7">
+                    </div>
+
+                    <div class="ui-block-b" style="padding-left: 5px;">
+                        <label class="small-text">Monthly Price</label>
+                        <input type="number" id="price_property" data-clear-btn="true" required="" value="50000000">
+                    </div>
+                </fieldset>
+
+                <label class="small-text">Reporter</label>
+                <input type="text" id="reporter_property" data-clear-btn="true" required="">
+
+
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" style="padding: 5px;">
+                        <button type="button" id="cancel">Cancel</button>
+                    </div>
+
+                    <div class="ui-block-b" style="padding: 5px;">
+                        <button type="submit" class="blue">Update</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="detail" style="box-shadow: -10px -10px 5px -5px #888888; border: 1;">
+                <h1 id="name_property" style="color: #256A99;"></h1>
+                <img style="display: block; margin-left: auto; margin-right: auto;" id="image" width="300" />
+                <table style="text-align: left;">
+                    <tbody>
+                        <tr>
+                            <th><img src="img/map.png" height="20px"></th>
+                            <td>
+                                <span id="street_property"></span>, <span id="ward_property"></span>, <span
+                                    id="district_property"></span>, <span id="city_property"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th><img src="img/renthouse.png" height="20px"></th>
+                            <td id="type_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th><img src="img/bedroom.png" height="20px"></th>
+                            <td id="bedroom_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th><img src="img/icon-price.png" height="20px"></th>
+                            <td id="price_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th><img src="img/icon-furniture.png" height="20px"></th>
+                            <td id="furniture_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th><img src="img/human.png" height="15px"></th>
+                            <td id="reporter_property"></td>
+                        </tr>
+
+                        <tr>
+                            <th><img src="img/time.png" height="20px"></th>
+                            <td id="date"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <fieldset class="ui-grid-a" style="overflow: visible;">
+                <div class="ui-block-a" style="padding-right: 5px;">
+                        <a href="#frm-update-property" data-rel="popup" data-position-to="window" id="btn-update-popup" class="ui-btn ui-icon-edit ui-btn-icon-left" style="background-color: darkorange; color: whitesmoke;">
+                            Update
+                        </a>
+                </div>
+                <div class="ui-block-b" style="padding-left: 5px;">
+                        <a href="#frm-delete-property" data-rel="popup" data-position-to="window" id="btn-delete-popup" class="ui-btn ui-icon-delete ui-btn-icon-left" style="background-color: red; color: whitesmoke;">
+                            Delete
+                        </a>
+                </div>
+            </fieldset>
+
+            <form id="frm-note" style="margin-top: 25px;">
+                <textarea id="message" placeholder="Please enter your note here..."></textarea>
+
+                <div style="text-align: right;">
+                    <button type="submit" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-mini" style="background-color: green;">Add</button>
+                </div>
+
+                <div id="list-note"></div>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page-home-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext ui-nodisc-icon">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-create-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-plus ui-btn-icon-notext ui-nodisc-icon">New</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-list-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-grid ui-btn-icon-notext ui-nodisc-icon ui-state-persist active">List</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-about-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-info ui-btn-icon-notext ui-nodisc-icon">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- PAGE "About" -->
+    <div data-role="page" id="page-about-property" data-url="page-about-property">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <h1 style="font-size: 1.5em;">About</h1>
+        </div>
+
+        <div data-role="main" class="ui-content" style="text-align: center; padding: 0; text-align: left;">
+            <img style="width: 100%;" src="img/house_small.jpg" alt="">
+
+            <div class="subheader">
+                <div>
+                    <p>Now delivering real estate rental + more</p>
+                    <p>Find out now <i class="fa fa-chevron-right"></i></p>
+                </div>
+                <img src="img/search1.png" alt="" />
+            </div>
+
+            <div class="grid container">
+                <div class="item">
+                    <h4><img style="width: 100px; margin-left: 30px;" src="img/house_small.jpg" alt=""></h4>
+                    <p class="desc">Special price after the epidemic season</p>
+                </div>
+                <div class="item">
+                    <h4><img style="width: 100px; margin-left: 30px;" src="img/binh-an-village-dalat.jpg" alt=""></h4>
+                    <p class="desc">Get 25% off when you refer a friend</p>
+                </div>
+                <div class="item">
+                    <h4><img style="width: 100px; margin-left: 30px;" src="img/rent-apartment-ho-chi-minh.png" alt="">
+                    </h4>
+                    <p class="desc">Receive preferential shipping when renting a room</p>
+                </div>
+                <div class="item">
+                    <h4><img style="width: 100px; margin-left: 30px;" src="img/house_small.jpg" alt=""></h4>
+                    <p class="desc">Become a loyal customer to receive flight deals</p>
+                </div>
+                <div class="item">
+                    <h4><img style="width: 100px; margin-left: 30px;" src="img/binh-an-village-dalat.jpg" alt=""></h4>
+                    <p class="desc">Up to 80% discount when you become a loyal customer</p>
+                </div>
+                <div class="item">
+                    <h4><img style="width: 100px; margin-left: 30px;" src="img/rent-apartment-ho-chi-minh.png" alt="">
+                    </h4>
+                    <p class="desc">View your weekly ad</p>
+                </div>
+            </div>
+
+            <fieldset class='ui-grid-a' style='margin-top: 25px;' style="width: 50%;">
+                <div class='ui-block-a'>
+                    <button id="btn-beep">Beep</button>
+                </div>
+
+                <div class='ui-block-b'>
+                    <button style="background-color: #3498db; color: white;" id="btn-vibrate">Vibrate</button>
+                </div>
+            </fieldset>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page-home-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext ui-nodisc-icon">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-create-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-plus ui-btn-icon-notext ui-nodisc-icon">New</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-list-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-grid ui-btn-icon-notext ui-nodisc-icon">List</a>
+                    </li>
+
+                    <li>
+                        <a href="#page-about-property" data-transition="none"
+                            class="ui-btn ui-btn-b ui-icon-info ui-btn-icon-notext ui-nodisc-icon ui-state-persist active">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/library.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

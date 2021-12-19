@@ -1,0 +1,271 @@
+* {
+  -webkit-tap-highlight-color: transparent; /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  text-shadow: none !important;
+  --secondary-color: #256A99;
+}
+
+body {
+  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none; /* prevent copy paste, to allow, change "none" to "text" */
+  font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
+    "Roboto", sans-serif;
+  font-size: 12px;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  /* Padding to avoid the "unsafe" areas behind notches in the screen */
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-left, 0px)
+    env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px);
+}
+
+.ui-page {
+  background-color: white;
+}
+
+.ui-page .ui-header,
+.ui-page .ui-footer .ui-navbar ul li a {
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: #256A99;
+  border-color: white;
+}
+
+.active,
+.ui-select .ui-btn:hover {
+  background-color: #27251f !important;
+  color: white !important;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.list {
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px #256A99;
+  -moz-box-shadow: 0px 0px 5px 1px #394247;
+  -webkit-box-shadow: 0px 0px 5px 1px #256A99;
+  padding: 5px 15px;
+  margin: 10px 0px;
+}
+
+input {
+  height: 35px;
+}
+
+.ui-input-text {
+  padding-left: 5px;
+  padding-right: 5px;
+  /* border: none; */
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-radius: 15;
+  border: 2px solid;
+  /* border-bottom: 2px solid #256A99 !important; */
+}
+
+.ui-input-text .ui-icon-delete::after {
+  background-color: #256A99;
+}
+
+.ui-select .ui-btn {
+  border: 1px solid white;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  background: #256A99;
+  color: white;
+  font-weight: normal;
+}
+
+.ui-select .ui-icon-carat-d::after {
+  background-color: transparent;
+}
+
+.ui-focus {
+  box-shadow: 0px 0px 5px 0px #256A99 !important;
+  -moz-box-shadow: 0px 0px 5px 0px #256A99 !important;
+  -webkit-box-shadow: 0px 0px 5px 0px #256A99 !important;
+}
+
+.small-text {
+  color: #256A99;
+  font-weight: bold !important;
+  font-size: 17px !important;
+  margin-top: 20px !important;
+}
+
+.blue {
+  background-color: #256A99 !important;
+  color: white !important;
+  font-weight: normal !important;
+}
+
+#frm-confirm-property table {
+  margin: 5px;
+}
+
+#frm-confirm-property th,
+#frm-confirm-property td {
+  border-radius: 5px;
+  border: 1px solid #256A99;
+  padding: 10px;
+  height: 25px;
+}
+
+#frm-confirm-property th {
+  background-color: #256A99;
+  color: white;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+#detail th,
+#detail td {
+  padding: 5px 10px;
+}
+
+#menu-right {
+  float: right;
+  margin-right: 0.5em;
+}
+
+.transparent {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+#page-list-property #btn-filter-popup {
+  background-color: #256A99 !important;
+  color: white !important;
+  font-weight: normal !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border: none !important;
+  width: 40px !important;
+  height: 37px;
+  margin-bottom: 8px;
+  background-image: url("../img/icon-filter.png");
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#page-list-property #btn-reset {
+  background-color: #256A99 !important;
+  color: white !important;
+  font-weight: normal !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border: none !important;
+  width: 40px !important;
+  height: 37px;
+  margin-bottom: 8px;
+}
+
+#page-detail .btn-option {
+  border: none !important;
+  background-color: transparent !important;
+  /* background-image: url("../img/icon-three-dots.png"); */
+  background-size: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#page-home-property table {
+  border-collapse: collapse;
+  width: 100vw;
+}
+
+#page-home-property th,
+#page-home-property td {
+  width: 33vw;
+  height: 20vw;
+  border: 1px solid #256A99;
+}
+
+#page-home-property table .ui-btn {
+  font-size: 13px;
+  margin: 0;
+  background-color: white;
+  font-weight: normal;
+  border-radius: 0;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border: none;
+}
+
+/* For sticky footer - grow to fill the space */
+.content {
+  flex: 1 0 auto;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: none;
+  padding: 10px;
+}
+
+.subheader {
+  background: var(--secondary-color);
+  color: #fff;
+  box-shadow: 3px 3px 10px #888888;
+  font-size: 14px;
+  padding: 10px;
+  width: 90%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subheader p {
+  margin: 4px;
+}
+
+.subheader img {
+  width: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.grid .item {
+  display: flex;
+  flex-direction: column;
+  border: 1px #ccc solid;
+  padding: 10px;
+  box-shadow: 1px 1px 2px #ccc;
+}
+
+.grid .item h4 {
+  margin-bottom: 5px;
+}
+
+.grid .item p {
+  font-size: 14px;
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.grid .item img {
+  width: 30px;
+  text-align: right;
+  display: block;
+  align-self: flex-end;
+}
